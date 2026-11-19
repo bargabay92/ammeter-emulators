@@ -75,7 +75,9 @@ def main():
     )
 
     if args.plot:
-        plot_measurements(results, run_id)
+        plot_paths = plot_measurements(results, run_id)
+        for path in plot_paths:
+            print(f"Plot saved: {path}")
 
     if args.compare:
         compare_results_across_ammeters()
