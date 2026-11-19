@@ -1,15 +1,21 @@
 
 # Addressed Bugs 
-1. runs occasionally failed with "OSError: Address already in use"
+## 1. Address already in use
+Runs occasionally failed with "OSError: Address already in use"
 To support reusing the server address after orevious run, I added to base_ammeter.py (before bind) the following line: 
 ```s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)```
 this allows the address re-use in situation where there is a lingering TCP connection .
 
-2. Communication timeout -  a socket timeout was added to the function: request_current_from_ammeter - in order to avoid waiting for forever for responeses, so when timeout exeed, it will raise a timeout exception.
+## 2. Communication timeout 
+I added a socket timeout to : request_current_from_ammeter - to prevent waiting indefinitely for a response , so when timeout exceeded, it will raise a timeout exception.
 
 
-# How to run?
-First, Install dependencies with : ```python -m pip install -r requirements.txt```
+# How to run
+
+Run all commands from the project root.
+
+Install dependencies:
+ ```python -m pip install -r requirements.txt```
 
 Run measurements using the default configuration:
 
@@ -26,10 +32,6 @@ Run measurements and generate a comparison of saved runs:
 Generate both plots and a comparison:
 
 ```python main.py --plot --compare```
-
-Use a specific configuration file:
-
-```python main.py --config config/config.yaml```
 
 Run the automated tests:
 
