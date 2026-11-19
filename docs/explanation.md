@@ -11,11 +11,10 @@ I added a socket timeout to : request_current_from_ammeter - to prevent waiting 
 
 
 # How to run
-
 Run all commands from the project root.
 
 Install dependencies:
- ```python -m pip install -r requirements.txt```
+```python -m pip install -r requirements.txt```
 
 Run measurements using the default configuration:
 
@@ -42,8 +41,8 @@ Run the automated tests:
 
 Results are saved in the results/ directory:
 
-### measurements_<run_id>.csv: measurements, statistical summaries, and sampling settings for each ammeter.
+1. measurements_<run_id>.csv: measurements, statistical summaries, and sampling settings for each ammeter.
 
-### comparison.csv: a summary of saved runs, grouped by ammeter and ordered by start time.
+2. comparison.csv: a summary of saved runs, grouped by ammeter and ordered by start time.
 
-### plot_<run_id>_<ammeter_name>.png: measurement plots, generated when --plot is enabled.
+3. plot_<run_id>_<ammeter_name>.png: measurement plots, generated when --plot is enabled.
