@@ -1,4 +1,4 @@
-from src.testing.test_framework import AmmeterTestFramework
+from testing.test_analysis import AmmeterTestFramework
 
 def main():
     # יצירת מסגרת הבדיקות
